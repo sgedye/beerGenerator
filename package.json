@@ -1,0 +1,7 @@
+{
+  "name": "beer-generator",
+  "homepage": "https://sgedye/github.com/beerGenerator",
+  "dependencies": {
+    "typescript": "^3.8.3"
+  }
+}

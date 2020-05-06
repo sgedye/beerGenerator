@@ -7,9 +7,16 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch('https://api.punkapi.com/v2/beers/random')
             .then(function (response) { return response.json(); })
             .then(function (data) {
-            beerTitle.innerHTML = data[0].name + " (" + data[0].abv + "abv)";
-            beerDesc.innerHTML = data[0].description;
+            if (beerTitle)
+                beerTitle.innerHTML = data[0].name + " (" + data[0].abv + "abv)";
+            if (beerDesc)
+                beerDesc.innerHTML = data[0].description;
         });
     };
-    btn.addEventListener('click', function (e) { return getRandomBeer(e); });
+    if (btn) {
+        btn.addEventListener('click', function (e) {
+            console.log(e, typeof (e));
+            getRandomBeer(e);
+        });
+    }
 });
